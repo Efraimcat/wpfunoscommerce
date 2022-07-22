@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       wpfunoscommerce
  * Plugin URI:        https://github.com/Efraimcat/wpfunoscommerce/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       Funcionalidades para funos.es Commerce
  * Version:           1.0.0
  * Author:            Efraim Bayarri
  * Author URI:        https://efraim.cat
