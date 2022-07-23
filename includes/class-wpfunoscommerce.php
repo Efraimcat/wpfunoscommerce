@@ -78,8 +78,8 @@ class Wpfunoscommerce {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-		//$this->define_paycomet_hooks();
-		//$this->define_frakmenta_hooks();
+		$this->define_paycomet_hooks();
+		$this->define_frakmenta_hooks();
 
 	}
 
@@ -127,12 +127,12 @@ class Wpfunoscommerce {
 		/**
 		* frakmenta
 		*/
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'frakmenta/class-wpc-frakmenta.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'frakmenta/class-wpfc-frakmenta.php';
 
 		/**
 		* paycomet
 		*/
-		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'paycomet/class-wpc-paycomet.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'paycomet/class-wpfc-paycomet.php';
 
 		$this->loader = new Wpfunoscommerce_Loader();
 
@@ -194,14 +194,14 @@ class Wpfunoscommerce {
 	* @since    1.0.0
 	* @access   private
 	*/
-	//private function define_frakmenta_hooks() {
+	private function define_frakmenta_hooks() {
 
-		//$plugin_frakmenta = new Wpfc_Frakmenta( $this->get_plugin_name(), $this->get_version() );
+		$plugin_frakmenta = new Wpfc_Frakmenta( $this->get_plugin_name(), $this->get_version() );
 
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frakmenta, 'enqueue_styles' );
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frakmenta, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frakmenta, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_frakmenta, 'enqueue_scripts' );
 
-	//}
+	}
 
 	/**
 	* Register all of the hooks paycomet
@@ -210,14 +210,14 @@ class Wpfunoscommerce {
 	* @since    1.0.0
 	* @access   private
 	*/
-	//private function define_paycomet_hooks() {
+	private function define_paycomet_hooks() {
 
-		//$plugin_paycomet = new Wpfc_Paycomet( $this->get_plugin_name(), $this->get_version() );
+		$plugin_paycomet = new Wpfc_Paycomet( $this->get_plugin_name(), $this->get_version() );
 
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_paycomet, 'enqueue_styles' );
-		//$this->loader->add_action( 'wp_enqueue_scripts', $plugin_paycomet, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_paycomet, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_paycomet, 'enqueue_scripts' );
 
-	//}
+	}
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
